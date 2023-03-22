@@ -13,11 +13,7 @@ export type HomeProps = {
   swiperImages: SwiperImage[]
 }
 
-export type FirstViewProps = { swiperImages: SwiperImage[] }
-
 export type SwiperImage = { src: string; alt: string }
-
-export type ImageSwiperProps = { swiperImages: SwiperImage[] }
 
 export type TheLatestSectionProps = { blogs: Blog[] }
 

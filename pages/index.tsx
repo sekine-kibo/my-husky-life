@@ -17,19 +17,15 @@ export const getStaticProps: GetStaticProps = async () => {
       queries: { limit: 1000, fields: 'id,tag' } // 10件のtag情報の取得で0.002MB(2KB)
     })
     .then((res) => res.contents)
-  const { swiperImages } = await fetch('http://localhost:3000/api/config').then(
-    (res) => res.json()
-  )
   return {
     props: {
       blogs: blogs,
-      tags: tags,
-      swiperImages: swiperImages
+      tags: tags
     }
   }
 }
 
-const Home: NextPage<HomeProps> = ({ blogs, tags, swiperImages }) => {
+const Home: NextPage<HomeProps> = ({ blogs, tags }) => {
   return (
     <>
       <Head>
@@ -41,7 +37,7 @@ const Home: NextPage<HomeProps> = ({ blogs, tags, swiperImages }) => {
       <main>
         <Layout>
           <section>
-            <FirstView swiperImages={swiperImages} />
+            <FirstView />
             <TheLatestSection blogs={blogs} />
             <TagSection tags={tags} />
           </section>

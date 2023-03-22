@@ -1,17 +1,15 @@
-import React, { FC, useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { ImageSwiperProps } from '@/types/common'
+import { swiperImages } from '@/public/static/swiperImages'
 import Image from 'next/image'
+import React, { FC, useState } from 'react'
 import { EffectCoverflow } from 'swiper'
-
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-const ImageSwiper: FC<ImageSwiperProps> = ({ swiperImages }) => {
+const ImageSwiper: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const getActiveIndex = (swiper: any) => {
-    console.log(swiper)
     setActiveIndex(swiper.activeIndex)
   }
 

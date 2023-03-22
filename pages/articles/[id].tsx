@@ -9,7 +9,7 @@ import React, { FC } from 'react'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogs = await client
-    .get({ endpoint: 'blog', queries: { fields: 'id' } })
+    .get({ endpoint: 'blog', queries: { fields: 'id', limit: 100 } })
     .then((res) => res.contents)
   const paths = blogs.map((blog: Blog) => `/articles/${blog.id}`)
   return { paths, fallback: false }
