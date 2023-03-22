@@ -21,10 +21,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
     endpoint: 'blog',
     contentId: `${id}`
   })
-  const { navbarItems } = await fetch('http://localhost:3000/api/config').then(
-    (res) => res.json()
-  )
-  return { props: { blog: blog, navbarItems: navbarItems } }
+  return { props: { blog: blog } }
 }
 
 const ArticlePage: FC<ArticlePageProps> = ({ blog }) => {
